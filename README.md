@@ -1,5 +1,5 @@
 # Proyecto-Pensamiento-Computacional-Orientado-a-Objetos
-=============
+----------------------
 Código para ir al super
 -------------
 A01276329 // Juan Yael Avalos Mayorga
