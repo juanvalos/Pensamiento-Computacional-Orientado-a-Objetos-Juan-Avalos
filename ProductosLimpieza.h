@@ -1,14 +1,27 @@
-#include <string>
+# ifndef PRODUCTOSLIMPIEZA_H
+# define PRODUCTOSLIMPIEZA_H
 
-class ProductosLimpieza {
+# include <string>
+using namespace std;
+
+# include "Productos.h"
+
+class ProductosLimpieza : public Productos {
 
     private:
-        string nombre ;
-        float precio ;
         int volumen ;
         string uso ;
     
     public:
+      
+        // Constructores
+        ProductosLimpieza (string nom , float prec , int vol, string us ) : 
+        Productos(nom, prec) {
+            volumen = vol;
+            uso = us;
+        }
+
+        //Getters
         string getnombre() {
             return nombre;
         }
@@ -25,6 +38,8 @@ class ProductosLimpieza {
             return uso;
         }
         
+        
+        //Setters
         void setNombre(string nom) {
             nombre = nom;
         }
@@ -33,20 +48,18 @@ class ProductosLimpieza {
             precio = pre;
         } 
 
-        void setVolumen(int vol) {
+        void setvolumen(int vol) {
             volumen = vol;
         } 
 
-        void setUso(string use) {
-            uso = use;
+        void setFechaCad(string us) {
+            uso = us;
         } 
-
-        void printData (){
-             cout << " " << endl;
-             cout << "Producto de Limpieza" << endl;
-             cout << "Nombre:  " << nombre << endl;
-             cout << "Precio:  " << precio << endl;
-             cout << "Volumen:  " << volumen << endl;
-             cout << "Uso:  " << uso << endl;
+        
+        //Metodos abstractos
+        void productoAgregado() {
+            cout << "El Producto de Limpieza ha sido agregado Almacen" << endl;
         }
 };
+
+#endif
