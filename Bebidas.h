@@ -1,14 +1,27 @@
-#include <string>
+# ifndef BEBIDAS_H
+# define BEBIDAS_H
 
-class Bebidas {
+# include <string>
+using namespace std;
+
+# include "Productos.h"
+
+class Bebidas : public Productos {
 
     private:
-        string nombre ;
-        float precio ;
         int volumen ;
         string fecha_caducidad ;
     
     public:
+      
+        // Constructores
+        Bebidas (string nom , float prec , int vol, string fecha_cad ) : 
+        Productos(nom, prec) {
+            volumen = vol;
+            fecha_caducidad = fecha_cad;
+        }
+
+        //Getters
         string getnombre() {
             return nombre;
         }
@@ -25,6 +38,8 @@ class Bebidas {
             return fecha_caducidad;
         }
         
+
+        //Setters
         void setNombre(string nom) {
             nombre = nom;
         }
@@ -33,31 +48,18 @@ class Bebidas {
             precio = pre;
         } 
 
-        void setVolumen(int vol) {
+        void setvolumen(int vol) {
             volumen = vol;
         } 
 
         void setFechaCad(string fecha) {
             fecha_caducidad = fecha;
         } 
-
-        void sumatoriaPrecios() {
-
-        }
-
-        void calculaVol_ml() {
-
-        }
-
-        void contProductos() {
-
-        }
-        void printData (){
-             cout << " " << endl;
-             cout << "Bebida" << endl;
-             cout << "Nombre:  " << nombre << endl;
-             cout << "Precio:  " << precio << endl;
-             cout << "Volumen:  " << volumen << endl;
-             cout << "Fecha de Caducidad:  " << fecha_caducidad << endl;
+        
+        //Metodos abstractos
+        void productoAgregado() {
+            cout << "La Bebida ha sido agregada al Almacen" << endl;
         }
 };
+
+#endif
