@@ -6,11 +6,17 @@ using namespace std;
 
 # include "Productos.h"
 
-class Alimentos : public Productos {
+/*
+Esta clase es una clase hija y recibe herencia por la clase "Productos". Esto significa que esta contiene los metodos
+y atributos que la clase madre tiene, ademas de los que esta clase tiene por aparte. Debido a que esta clase es para clasificar
+alimentos, esta tambien tendra calorias, peso y fecha de caducidad. El metodo abstracto "printData" se desarrolla aqui imprimiendo los
+5 datos que va a contener un atributo de tipo Alimento.
+*/
 
+class Alimentos : public Productos {    // En esta linea de codigo estamos aplicando herencia a la clase
     private:
-        int calorias ;
-        float peso ;
+        int calorias ;                  // Aqui ya escribimos los atributos que la bebida va a tener en "private" debido a que esta
+        float peso ;                    // esta es ua clase hija y no aplica herencia a otras clases.
         string fecha_caducidad ;
     
     public:
@@ -22,16 +28,8 @@ class Alimentos : public Productos {
             peso = pes;
             fecha_caducidad = fecha_cad;
         }
-        string getnombre() {
-            return nombre;
-        }
 
-
-        float getPrecio() {
-            return precio;
-        }
-
-
+        // Agregamos Getters
         int getCalorias() {
             return calorias;
         }
@@ -45,18 +43,8 @@ class Alimentos : public Productos {
         string getFechaCad() {
             return fecha_caducidad;
         }
-        
 
-        void setNombre(string nom) {
-            nombre = nom;
-        }
-
-
-        void setPrecio(int pre) {
-            precio = pre;
-        } 
-
-
+        // Agregamos Setters
         void setCalorias(int cal) {
             calorias = cal;
         } 
@@ -71,8 +59,14 @@ class Alimentos : public Productos {
             fecha_caducidad = fecha;
         } 
 
-        void productoAgregado() {
-            cout << "El Alimento ha sido agregado al Almacen" << endl;
+        // Desarrollamos el metodo abstracto "printData" conforme a los atributos de la clase hija
+        void printData (){
+             cout << " " << endl;
+             cout << "Alimento" << endl;
+             cout << "Nombre:  " << nombre << endl;
+             cout << "Precio:  " << precio << endl;
+             cout << "Calorias:  " << calorias << endl;
+             cout << "Fecha de Caducidad:  " << fecha_caducidad << endl;
         }
 };
 
