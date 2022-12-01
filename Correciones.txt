@@ -1,1 +1,7 @@
-hola
+Correciones:
+Ya se crearon constructores para las diferentes clases. Esta correcions se pueden ver en :
+    1. linea 24 del archivo "Alimentos.h"
+    2. linea 17 del archivo "Almacen.h"
+    3. linea 24 del archivo "Bebidas.h"
+    4. linea 24 del archivo "Productos.h"
+    5. linea 25 del archivo "ProductosLimpieza.h"
