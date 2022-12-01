@@ -6,11 +6,18 @@ using namespace std;
 
 # include "Productos.h"
 
-class ProductosLimpieza : public Productos {
+/*
+Esta clase es una clase hija y recibe herencia por la clase "Productos". Esto significa que esta contiene los metodos
+y atributos que la clase madre tiene, ademas de los que esta clase tiene por aparte. Debido a que esta clase es para clasificar
+productos de limpieza, esta tambien tendra volumen y uso El metodo abstracto "printData" se desarrolla aqui imprimiendo los
+4 datos que va a contener un atributo de tipo Bebida.
+*/
+
+class ProductosLimpieza : public Productos {     // En esta linea de codigo estamos aplicando herencia a la clase
 
     private:
-        int volumen ;
-        string uso ;
+        int volumen ;      // Aqui ya escribimos los atributos que la bebida va a tener en "private" debido a que esta
+        string uso ;       // esta es ua clase hija y no aplica herencia a otras clases.
     
     public:
       
@@ -21,15 +28,7 @@ class ProductosLimpieza : public Productos {
             uso = us;
         }
 
-        //Getters
-        string getnombre() {
-            return nombre;
-        }
-
-        float getPrecio() {
-            return precio;
-        }
-
+        // Agregamos Getters
         int getVolumen() {
             return volumen;
         }
@@ -39,26 +38,23 @@ class ProductosLimpieza : public Productos {
         }
         
         
-        //Setters
-        void setNombre(string nom) {
-            nombre = nom;
-        }
-
-        void setPrecio(int pre) {
-            precio = pre;
-        } 
-
+        // Agregamos Setters
         void setvolumen(int vol) {
             volumen = vol;
         } 
 
-        void setFechaCad(string us) {
+        void setUso(string us) {
             uso = us;
         } 
-        
-        //Metodos abstractos
-        void productoAgregado() {
-            cout << "El Producto de Limpieza ha sido agregado Almacen" << endl;
+         
+        // Desarrollamos el metodo abstracto "printData" conforme a los atributos de la clase hija
+        void printData (){
+             cout << " " << endl;
+             cout << "Producto de Limpieza" << endl;
+             cout << "Nombre:  " << nombre << endl;
+             cout << "Precio:  " << precio << endl;
+             cout << "Volumen:  " << volumen << endl;
+             cout << "Uso:  " << uso << endl;
         }
 };
 
